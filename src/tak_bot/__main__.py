@@ -221,7 +221,7 @@ async def run(cmd: str) -> asyncio.subprocess.Process:
         stdout=asyncio.subprocess.DEVNULL,  # we do not care about out
         stderr=asyncio.subprocess.DEVNULL,
     )
-    logger.info(f"Started process: {cmd!r} (PID: {proc.pid})")
+    logger.info(f"Started process: {cmd[:10]!r}.. (PID: {proc.pid})")
     return proc
 
 
@@ -262,7 +262,7 @@ async def main():
 
     async with asyncio.TaskGroup() as tg:
         tg.create_task(
-            run_incomming_message_processing(cmd, queue, daemon_host, daemon_port)
+            run_incomming_message_processing(cmd, queue, daemon_host, daemon_port)  # type: ignore
         )  # type: ignore
         tg.create_task(clitool.run())
 
