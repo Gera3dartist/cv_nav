@@ -16,5 +16,6 @@ dependencies = [
     "numpy>=1.26.0",
     "matplotlib>=3.8.0",
     "filterpy>=1.4.5",
-    "pycot>=3.0.1",
+    "pytak>=7.0.2",
+    "takproto>=3.0.1",
 ]

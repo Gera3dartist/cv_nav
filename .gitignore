@@ -12,4 +12,4 @@ wheels/
 output/
 data/
 
-.DS_Store/
+src/tak_bot/local_config.ini
